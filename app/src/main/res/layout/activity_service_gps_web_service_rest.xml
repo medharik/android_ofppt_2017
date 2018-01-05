@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_service_gps_web_service_rest"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.harik.lenovo2017.activits.ServiceGpsWebServiceRest">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+        android:background="#E0EEEE"
+        android:layout_weight="1"
+        android:gravity="center"
+
+    >
+
+        <TextView
+
+        android:text="coordonnées gps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvcoord"
+            android:layout_weight="1"
+           />
+
+        <TextView
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvaddress"
+            android:layout_weight="1"
+            android:background="#F00"
+            android:textColor="#FFF"
+             />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_weight="1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+        <EditText
+            android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Longitude"
+        android:ems="10"
+        android:layout_weight="1"
+        android:id="@+id/elon" />
+
+        <EditText
+            android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:inputType="textPersonName"
+    android:hint="Latitude"
+    android:ems="10"
+    android:layout_weight="1"
+
+    android:id="@+id/elat" />
+</LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_weight="1"
+       android:background="#EEEEEE"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+        android:gravity="center">
+
+
+        <Button
+       android:text="gps"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/bgps"
+       android:layout_weight="1"
+
+
+
+        />
+
+       <Button
+           android:layout_gravity="center"
+
+           android:text="@android:string/ok"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/bok"
+           android:layout_weight="1"
+           android:elevation="0dp" /></LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="cours">
+        <item>activité de calcul</item>
+        <item>list statique / intents implicites</item>
+        <item>activité des intents explicites</item>
+        <item>activité des intents avec result (retour) </item>
+        <item>Intent filter 4</item>
+        <item>list view simple (arrayadapter)</item>
+        <item>list view personnalisée (baseAdapter)</item>
+        <item>les services (intent services) / gps </item>
+
+    </array>
+</resources>
