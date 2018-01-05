@@ -26,6 +26,7 @@ tv= (TextView) findViewById(R.id.tvnav);
             Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
             v.vibrate(3000);
         }
+
        /* i.putExtra("age",29);
         if (i.hasExtra("age")){
             i.getStringExtra("age");

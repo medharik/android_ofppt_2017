@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.harik.lenovo2017.activits">
+
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.VIBRATE" />
-<uses-permission android:name="android.permission.SEND_SMS"></uses-permission>
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/logo"
@@ -21,13 +23,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Main2Activity" />
-        <activity android:name=".ListViewActivity" >
+        <activity android:name=".ListViewActivity">
             <intent-filter>
-                <action android:name="android.intent.action.CALL"></action>
-
+                <action android:name="android.intent.action.CALL" />
             </intent-filter>
-            </activity>
-
+        </activity>
         <activity android:name=".ListeViewPersonnaliee" />
         <activity android:name=".ServiceGpsWebServiceRest" />
 
@@ -57,7 +57,15 @@
             android:name=".IntentServiceRestful"
             android:exported="false" />
 
-        <activity android:name=".AppCesa"></activity>
+        <activity android:name=".AppCesa" />
+        <activity android:name="harik.exo.test.FilterActivity2">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <data android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity android:name="harik.exo.test.Web"></activity>
     </application>
 
 </manifest>
