@@ -55,7 +55,6 @@ String reponse="aucune";
             Toast.makeText(ServiceGpsWebServiceRest.this, "reponse GPS : "+reponse, Toast.LENGTH_SHORT).show();
 
             //  if(intent != null && intent.getAction()==IntentServiceRestful.ACTION_REPONSE_GPS  && intent.hasExtra(IntentServiceRestful.REPONSE_EXTRA_GPS)){
-reponse=intent.getStringExtra(IntentServiceRestful.REPONSE_EXTRA_GPS);
             //}
            // Toast.makeText(ServiceGpsWebServiceRest.this, "reponse GPS : "+reponse, Toast.LENGTH_SHORT).show();
             List<Map<String, String>> datalist = Utils.getList(reponse, "results");
@@ -80,14 +79,15 @@ tvaddress= (TextView) findViewById(R.id.tvaddress);
         Criteria c = new Criteria();
         c.setAccuracy(Criteria.ACCURACY_MEDIUM);
         provider = lm.getBestProvider(c, true);
-gpsReceiver=new RecepteurGPS();
-
+        gpsReceiver=new RecepteurGPS();
         bgps = (Button) findViewById(R.id.bgps);
         bok.setOnClickListener(this);
         bgps.setOnClickListener(this);
+
         filter =new IntentFilter(IntentServiceRestful.ACTION_REPONSE_GPS);
         registerReceiver(gpsReceiver,filter);
-     }
+
+    }
 
     @Override
     public void onClick(View v) {

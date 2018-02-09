@@ -17,8 +17,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 /**
@@ -29,17 +31,13 @@ public class Utils {
 
    public static  String HttpGetReponse(String url) throws IOException {
         OkHttpClient client = new OkHttpClient();
-
-
             Request request = new Request.Builder()
                     .url(url)
                     .build();
-
             Response response = client.newCall(request).execute();
             return response.body().string();
-
     }
-
+public static String [] cols={"formatted_address"};
     public static List<Map<String,String>> getList(String jsonString , String jsonRootObjectname){
         List<Map<String,String>> data=new ArrayList<>();
         Map<String,String> map=new HashMap<>();
@@ -48,11 +46,11 @@ public class Utils {
             JSONArray ja=jo.getJSONArray(jsonRootObjectname);
             for (int i=0;i<ja.length();i++){
 map=new HashMap<>();
-                map.put("formatted_address",ja.getJSONObject(i).getString("formatted_address"));
-         System.out.println("jsonss "+i+ " est "+ja.getJSONObject(i).toString());
+                map.put(cols[0],ja.getJSONObject(i).getString(cols[0]));
+      //  System.out.println("jsonss "+i+ " est "+ja.getJSONObject(i).toString());
 data.add(map);
             }
-            System.out.println("formatted_addresss final  est "+ ja.getJSONObject(0).getString("formatted_address"));
+           // System.out.println("formatted_addresss final  est "+ ja.getJSONObject(0).getString("formatted_address"));
 
         } catch (JSONException e) {
             System.out.println("Erreur getlist"+e.getMessage());
@@ -76,5 +74,16 @@ data.add(map);
 
             }
         }).create();
+    }
+    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+    OkHttpClient client = new OkHttpClient();
+    String post(String url, String json) throws IOException {
+        RequestBody body = RequestBody.create(JSON, json);
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .build();
+        Response response = client.newCall(request).execute();
+        return response.body().string();
     }
 }

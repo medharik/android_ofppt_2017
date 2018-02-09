@@ -28,45 +28,37 @@ ListView lv=null;
             Random r=new Random(10);
             e.put("nom","nom"+r.nextInt());
             e.put("prenom","prenom"+r.nextInt());
-
             data.add(e);
         }
         lv= (ListView) findViewById(R.id.listPersonnalise);
         lv.setAdapter(new MonAdaper());
-
     }
 
-    class MonAdaper extends BaseAdapter{
+public     class MonAdaper extends BaseAdapter{
         MonAdaper(){
-
         }
 MonAdaper(Context c, List<Map<String,String>> l){
 c=getApplicationContext();
-l=data;
 
-}
-        @Override
+
+}        @Override
         public int getCount() {
             return data.size();
         }
-
         @Override
         public Map<String, String> getItem(int position) {
             return data.get(position);
         }
-
         @Override
         public long getItemId(int position) {
             return position;
         }
-
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 try{
 
     if (convertView==null){
         convertView=getLayoutInflater().inflate(R.layout.element_list,null);// met parent à null
-
     }
 
     TextView tvnom= (TextView) convertView.findViewById(R.id.tvnom);

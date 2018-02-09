@@ -20,14 +20,16 @@ import java.util.Map;
 public class IntentServiceRestful extends IntentService {
     public  static final  String API_KEY="AIzaSyCH-BtEQw-RASlp2lYRST6mrCxep9ntWZI";
     public static final String  URL="https://maps.googleapis.com/maps/api/geocode/json?latlng=";
-            //"https://maps.googleapis.com/maps/api/geocode/json?latlng=33.5890745,-7.6133062&key=AIzaSyCH-BtEQw-RASlp2lYRST6mrCxep9ntWZI";
+    public static final String  URL_HTTP="https://maps.googleapis.com/maps/api/geocode/json?latlng=";
+
+    //"https://maps.googleapis.com/maps/api/geocode/json?latlng=33.5890745,-7.6133062&key=AIzaSyCH-BtEQw-RASlp2lYRST6mrCxep9ntWZI";
     // TODO: Rename actions, choose action names that describe tasks that this
     // IntentService can perform, e.g. ACTION_FETCH_NEW_ITEMS
     public static final String ACTION_REPONSE_GPS = "com.harik.lenovo2017.activits.action.REPONSE.gps";
     public static final String REPONSE_EXTRA_GPS = "com.harik.lenovo2017.activits.action.REPONSE.gps_REPONSE_EXTRA";
 
     public  static final String ACTION_GPS = "com.harik.lenovo2017.activits.action.GPS";
-    public   static final String ACTION_BAZ = "com.harik.lenovo2017.activits.action.BAZ";
+    public   static final String ACTION_HTTP= "com.harik.lenovo2017.activits.action.http";
 
     // TODO: Rename parameters
     private static final String EXTRA_LAT = "com.harik.lenovo2017.activits.extra.LAT";
@@ -59,9 +61,9 @@ public class IntentServiceRestful extends IntentService {
      * @see IntentService
      */
     // TODO: Customize helper method
-    public static void startActionBaz(Context context, String param1, String param2) {
+    public static void startActionHttp(Context context, String param1, String param2) {
         Intent intent = new Intent(context, IntentServiceRestful.class);
-        intent.setAction(ACTION_BAZ);
+        intent.setAction(ACTION_HTTP);
         intent.putExtra(EXTRA_LAT, param1);
         intent.putExtra(EXTRA_LON, param2);
         context.startService(intent);
@@ -77,10 +79,10 @@ public class IntentServiceRestful extends IntentService {
                 String url =URL+lat+","+lon+"&key="+API_KEY;
 
                 handleActionGPS(url);
-            } else if (ACTION_BAZ.equals(action)) {
+            } else if (ACTION_HTTP.equals(action)) {
                 final String param1 = intent.getStringExtra(EXTRA_LAT);
                 final String param2 = intent.getStringExtra(EXTRA_LON);
-                handleActionBaz(param1, param2);
+                handleActionHTTP(param1, param2);
             }
         }
     }
@@ -116,7 +118,7 @@ public class IntentServiceRestful extends IntentService {
      * Handle action Baz in the provided background thread with the provided
      * parameters.
      */
-    private void handleActionBaz(String param1, String param2) {
+    private void handleActionHTTP(String param1, String param2) {
         // TODO: Handle action Baz
         throw new UnsupportedOperationException("Not yet implemented");
     }

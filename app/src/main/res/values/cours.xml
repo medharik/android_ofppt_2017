@@ -9,6 +9,5 @@
         <item>list view simple (arrayadapter)</item>
         <item>list view personnalisée (baseAdapter)</item>
         <item>les services (intent services) / gps </item>
-
-    </array>
+<item>CRUD</item>    </array>
 </resources>

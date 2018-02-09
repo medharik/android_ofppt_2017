@@ -11,17 +11,11 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/logo"
-        android:label="offpt"
+        android:icon="@drawable/common_full_open_on_phone"
+        android:label="APP"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".Main2Activity" />
         <activity android:name=".ListViewActivity">
             <intent-filter>
@@ -65,7 +59,28 @@
                 <data android:scheme="http" />
             </intent-filter>
         </activity>
-        <activity android:name="harik.exo.test.Web"></activity>
+        <activity android:name="harik.exo.test.Web" />
+        <activity android:name=".curd" />
+        <activity android:name="com.master.Calcul" />
+        <activity android:name="harik.exo.test.BroadCastActivity" />
+        <activity android:name="com.master.ActIntentExplicite"></activity>
+        <activity android:name="com.harik.ces.cesaWeb" />
+        <activity
+            android:name=".FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/FullscreenTheme" />
+        <activity android:name=".WebViewHarik" />
+        <activity android:name="com.com.ifiag.IMC">
+
+        </activity>
+        <activity android:name="com.master.ListViewSimple">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
